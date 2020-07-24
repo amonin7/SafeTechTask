@@ -55,7 +55,7 @@ public class Service1Controller {
         try {
             result = new SignatureVerifier().verify(new JSONObject(signature));
         } catch (NoSuchAlgorithmException | InvalidKeySpecException | InvalidKeyException |
-                UnsupportedEncodingException | SignatureException e) {
+                SignatureException e) {
             e.printStackTrace();
             return new ResponseEntity<>(
                     new CustomResponseEntity("Verification didn't pass with error: " + e.getMessage()),

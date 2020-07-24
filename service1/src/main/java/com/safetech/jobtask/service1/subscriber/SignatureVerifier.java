@@ -14,7 +14,7 @@ import java.util.Base64;
 public class SignatureVerifier {
 
     public boolean verify(JSONObject obj) throws NoSuchAlgorithmException, InvalidKeySpecException,
-            InvalidKeyException, UnsupportedEncodingException, SignatureException {
+            InvalidKeyException, SignatureException {
 
         Signature ecdsaVerify = Signature.getInstance(obj.getString("algorithm"));
         KeyFactory kf = KeyFactory.getInstance("EC");
